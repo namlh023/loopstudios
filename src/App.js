@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./assets/scss/main.scss";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import logo from "./assets/images/logo.svg";
+import menu from "./assets/images/icon-hamburger.svg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main" id="main">
+      <Navbar className="main__nav" expand="xxl" fixed="top">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img src={logo} alt="Loopstudios" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <img src={menu} alt="" aria-hidden="true" />
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#">About</Nav.Link>
+              <Nav.Link href="#">Careers</Nav.Link>
+              <Nav.Link href="#">Events</Nav.Link>
+              <Nav.Link href="#">Products</Nav.Link>
+              <Nav.Link href="#">Support</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <section className="hero">
+        <div className="hero__content">
+          <h1 className="h1-like h1-upper h1-light">
+            Immersive experiences that deliver
+          </h1>
+        </div>
+      </section>
     </div>
   );
 }
