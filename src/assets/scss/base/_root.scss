@@ -13,8 +13,17 @@
   --fs-h1: 2.5rem;
   --lh-h1: 2.375rem;
 
+  --fs-text: 0.9375rem;
+  --lh-text: 1.5625rem;
+
+  --nav-top: 1.5rem;
+  --container-width: 1.5rem;
+  --hero-content: 40.625rem;
+
   @media (min-width: 90em) {
     --fs-h1: 4.5rem;
     --lh-h1: 4.375rem;
+    --nav-top: 4rem;
+    --container-width: 10.3125rem;
   }
 }

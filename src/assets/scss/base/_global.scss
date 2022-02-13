@@ -10,13 +10,71 @@ body {
   font-family: var(--ff-primary);
 }
 
+.my-container {
+  padding: 0 var(--container-width);
+}
+
 /*-------------------
 OVERRIDE BOOTSTRAP
 ---------------------*/
 
 #main {
-  #basic-navbar-nav {
-    justify-content: flex-end;
+  .collapsing {
+    transition: 0.1s;
+}
+
+  .my-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--clr-black);
+    display: inline-block;
+    margin-top: 0;
+    padding-top: var(--nav-top);
+  }
+
+  .navbar-toggler {
+    color: transparent;
+    border: 0;
+  }
+
+  .nav-link {
+    position: relative;
+
+    color: var(--clr-white);
+    font-size: var(--fs-text);
+    line-height: var(--lh-text);
+
+    text-decoration: none;
+  }
+
+
+  @media (min-width: 90rem) {
+    #basic-navbar-nav {
+      justify-content: flex-end;
+    }
+  
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+  
+
+    .nav-link:not(:first-child) {
+      margin-left: 2rem;
+    }
+  
+    .nav-link:hover:after {
+      content: "";
+      position: absolute;
+      bottom: -0.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 0.125rem;
+      background-color: var(--clr-white);
+    }
   }
 }
 
@@ -45,16 +103,15 @@ COMPONENT
 
 .main {
   &__nav {
-    margin-top: 1.5rem;
+    margin-top: var(--nav-top);
   }
 }
 
 .hero {
   min-height: 40.625rem;
-  padding: 2.5rem 1.5rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   background-image: url("../../images/mobile/image-hero.jpg");
@@ -63,7 +120,13 @@ COMPONENT
   background-size: 100% 100%;
 
   &__content {
+    max-width: var(--hero-content);
     border: 2px solid #ffffff;
     padding: 1.5rem 1.5rem;
+  }
+}
+@media (min-width: 90em) {
+  .hero {
+    background-image: url("../../images/desktop/image-hero.jpg");
   }
 }
